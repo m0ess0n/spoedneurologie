@@ -368,7 +368,7 @@
                 
                 <button class="protocol-btn stroke" onclick="showPage('stroke')">
                     <div class="protocol-title">🧠 Herseninfarct</div>
-                    <div class="protocol-desc">IV trombolyse • Trombectomie criteria • Tijdvenster</div>
+                    <div class="protocol-desc">IV trombolyse (0-12u) • Trombectomie (0-24u) • DOAC beslisboom</div>
                 </button>
 
                 <button class="protocol-btn ich" onclick="showPage('ich')">
@@ -383,7 +383,7 @@
             </div>
 
             <div class="footer">
-                <p><strong>Versie 1.0</strong> • Gebaseerd op NVN/ESO/AES richtlijnen</p>
+                <p><strong>Versie 2.3</strong> • Gebaseerd op NVN/ESO/AES richtlijnen</p>
                 <p>Altijd lokaal protocol raadplegen</p>
             </div>
         </div>
@@ -403,13 +403,14 @@
             </div>
 
             <div id="stroke-ivt" class="hidden card">
-                <h2>IV Trombolyse (Alteplase)</h2>
+                <h2>IV Trombolyse</h2>
                 
                 <div class="info-box green">
                     <h3>✅ Indicaties</h3>
                     <div class="small-text">
-                        • Acuut herseninfarct met meetbaar neurologisch uitval<br>
-                        • <strong>&lt; 4.5 uur</strong> na symptoombegin (bekend tijdstip)<br>
+                        • Acuut herseninfarct met <strong>NIHSS ≥ 1</strong><br>
+                        • <strong>&lt; 4.5 uur:</strong> zonder perfusiecriteria<br>
+                        • <strong>4.5-12 uur:</strong> met CT perfusiecriteria (infarctkern &lt; 25ml én penumbra ≥ infarctkern)<br>
                         • CT hersenen zonder bloeding<br>
                         • Leeftijd ≥ 18 jaar
                     </div>
@@ -420,42 +421,82 @@
                     <div class="small-text">
                         <strong>Absoluut:</strong><br>
                         • Intracraniale bloeding (ooit)<br>
-                        • Recent groot trauma/operatie (&lt; 14 dagen)<br>
-                        • Gastro-intestinale bloeding (&lt; 21 dagen)<br>
+                        • Recent groot trauma/operatie (&lt; 2 maanden)<br>
+                        • Gastro-intestinale bloeding (&lt; 2 weken)<br>
                         • Actieve bloeding<br>
-                        • Bloedglucose &lt; 2.8 of &gt; 22.0 mmol/L<br>
+                        • Bloedglucose &lt; 2.7 of &gt; 22.0 mmol/L<br>
+                        • RR ≥ 185/110 mmHg (beide waarden)<br>
+                        • VKA gebruik met INR &gt; 1.7<br>
+                        • DOAC gebruik (zie apart schema)<br>
+                        • Trombocyten &lt; 100 x 10⁹/L<br>
                         <br>
                         <strong>Relatief (overleg neuroloog):</strong><br>
                         • NIHSS &gt; 25<br>
-                        • Trombocyten &lt; 100 x 10⁹/L<br>
-                        • INR &gt; 1.7<br>
-                        • RR systolisch &gt; 185 of diastolisch &gt; 110 mmHg
+                        • Epileptisch insult bij debuut<br>
+                        • Actuele zwangerschap
                     </div>
                 </div>
 
                 <div class="info-box blue">
-                    <h3>💉 Dosering Alteplase (Actilyse®)</h3>
-                    <div class="dosage">0.9 mg/kg (max 90 mg)</div>
-                    <div class="small-text">
-                        <strong>Toediening:</strong><br>
-                        • 10% als bolus IV over 1 minuut<br>
-                        • 90% als infuus over 60 minuten<br>
-                        <br>
-                        <strong>Voorbeeld 80 kg:</strong><br>
-                        • Totaal: 72 mg<br>
-                        • Bolus: 7.2 mg (1 minuut)<br>
-                        • Infuus: 64.8 mg (60 minuten)
+                    <h3>💉 Medicatie (voorkeur: Tenecteplase)</h3>
+                    <div style="margin-bottom: 15px;">
+                        <strong style="color: #2563eb; font-size: 16px;">1e keus: Tenecteplase (Metalyse®)</strong>
+                        <div class="dosage">0.25 mg/kg (max 25 mg)</div>
+                        <div class="small-text">
+                            <strong>Toediening:</strong> Eenmalige IV bolus in 5-10 seconden<br>
+                            <br>
+                            <strong>Gewichtscategorieën:</strong><br>
+                            • &lt; 60 kg: 15 mg (3000 E)<br>
+                            • 60-70 kg: 17.5 mg (3500 E)<br>
+                            • 70-80 kg: 20 mg (4000 E)<br>
+                            • 80-90 kg: 22.5 mg (4500 E)<br>
+                            • ≥ 90 kg: 25 mg (5000 E)
+                        </div>
+                    </div>
+                    <div>
+                        <strong style="color: #64748b; font-size: 16px;">Alternatief: Alteplase (Actilyse®)</strong>
+                        <div class="dosage">0.9 mg/kg (max 90 mg)</div>
+                        <div class="small-text">
+                            <strong>Toediening:</strong><br>
+                            • 10% als bolus IV over 1 minuut<br>
+                            • 90% als infuus over 60 minuten
+                        </div>
                     </div>
                 </div>
 
                 <div class="info-box yellow">
-                    <h3>⚠️ Na IVT</h3>
+                    <h3>🩺 DOAC Gebruik</h3>
+                    <div class="small-text">
+                        <strong>Bij proximale occlusie:</strong> Primair EVT (niet wachten op lab)<br>
+                        <br>
+                        <strong>Xa-remmers (Eliquis®/Xarelto®/Lixiana®):</strong><br>
+                        • Inname &lt; 4u: geen IVT<br>
+                        • Inname 4-24u: bepaal spiegel<br>
+                        &nbsp;&nbsp;- &lt; 50 ng/ml: IVT mogelijk<br>
+                        &nbsp;&nbsp;- 50-100 ng/ml: IVT overwegen<br>
+                        &nbsp;&nbsp;- &gt; 100 ng/ml: niet aan te raden<br>
+                        • Inname &gt; 24u: geen bezwaar IVT<br>
+                        <br>
+                        <strong>Dabigatran (Pradaxa®):</strong><br>
+                        • Inname &lt; 24u: geef Idarucizumab 5g IV, na 10 min IVT<br>
+                        • Inname &gt; 24u + GFR &gt; 60: geen bezwaar IVT<br>
+                        • Inname 24-48u + GFR &lt; 60: geef Idarucizumab, daarna IVT
+                    </div>
+                </div>
+
+                <div class="info-box yellow">
+                    <h3>⚠️ Na IVT - Eerste 24 uur</h3>
                     <div class="small-text">
                         • Observatie stroke unit/ICU<br>
-                        • RR-controle elk 15 min (1e uur), dan elk 30 min (6 uur), dan elk uur<br>
-                        • Streef RR &lt; 180/105 mmHg<br>
-                        • <strong>Geen anticoagulantia/trombocytenaggreg. eerste 24 uur</strong><br>
-                        • CT 24 uur post-IVT (bij verslechtering eerder)
+                        • RR-controle: elk 15 min (2u) → elk 30 min (6u) → elk uur<br>
+                        • <strong>Streef RR &lt; 185/110 mmHg</strong><br>
+                        • <strong>Geen anticoagulantia/trombocytenaggreg.</strong><br>
+                        • CT 24u post-IVT (bij verslechtering eerder)<br>
+                        • 6 uur bedrust<br>
+                        <br>
+                        <strong>Na 24 uur (indien stabiel):</strong><br>
+                        • Start ASA 240mg eenmalig → 80mg 1dd<br>
+                        • Plus clopidogrel 300mg eenmalig → 75mg 1dd
                     </div>
                 </div>
 
@@ -468,18 +509,24 @@
                 <div class="info-box green">
                     <h3>✅ Indicaties EVT</h3>
                     <div class="small-text">
-                        <strong>Tijdvenster:</strong><br>
-                        • <strong>&lt; 6 uur:</strong> Afsluiting voorste circulatie + ASPECTS ≥ 6<br>
-                        • <strong>6-24 uur:</strong> Grote kernmismatch op CTA-perfusie/MRI<br>
-                        <br>
-                        <strong>Vaatafsluiting:</strong><br>
-                        • A. carotis interna (distaal)<br>
-                        • A. cerebri media M1/M2 (proximaal)<br>
-                        • A. basilaris<br>
-                        <br>
-                        <strong>Functionele status:</strong><br>
+                        <strong>Voorste circulatie (< 24 uur):</strong><br>
+                        • Proximale intracraniële occlusie:<br>
+                        &nbsp;&nbsp;- A. carotis interna (distaal)<br>
+                        &nbsp;&nbsp;- A. cerebri media M1 of proximale/dominante M2<br>
+                        &nbsp;&nbsp;- A. cerebri anterior (A1)<br>
+                        • <strong>NIHSS ≥ 2</strong><br>
+                        • Geen demarcatie > 1/3 media stroomgebied<br>
                         • Pre-morbide mRS 0-2<br>
-                        • NIHSS meestal ≥ 6
+                        <br>
+                        <strong>0-6 uur:</strong> Geen specifieke perfusiecriteria nodig<br>
+                        <strong>6-24 uur:</strong> Mismatch criteria op CTA/CTP:<br>
+                        &nbsp;&nbsp;- Aanwezige collateralen op CTA EN mismatch op CTP, OF<br>
+                        &nbsp;&nbsp;- Infarctkern < 100 ml op CTP<br>
+                        <br>
+                        <strong>Basilaris occlusie (< 24 uur):</strong><br>
+                        • <strong>NIHSS ≥ 10</strong><br>
+                        • Geen vroege ischemische afwijkingen (bij 12-24u)<br>
+                        • Bij NIHSS < 10: individuele afweging
                     </div>
                 </div>
 
@@ -489,8 +536,26 @@
                         <strong>Bij vermoeden grote vaatafsluiting:</strong><br>
                         • Direct CTA (of MRA)<br>
                         • Spoed-overleg interventie-neuroloog<br>
-                        • IVT geeft EVT NIET tegen - <strong>bridging mogelijk!</strong><br>
-                        • Transfer naar interventiecentrum overwegen
+                        • <strong>IVT geeft EVT NIET tegen - bridging mogelijk!</strong><br>
+                        • Transfer naar interventiecentrum overwegen<br>
+                        <br>
+                        <strong>BELANGRIJK:</strong><br>
+                        Na IVT niet wachten op verbetering - bij occlusie direct EVT overwegen!
+                    </div>
+                </div>
+
+                <div class="info-box red">
+                    <h3>❌ Contra-indicaties EVT</h3>
+                    <div class="small-text">
+                        <strong>Absoluut:</strong><br>
+                        • Hersenbloeding in aangedane hemisfeer<br>
+                        <br>
+                        <strong>Relatief:</strong><br>
+                        • Recent gedemarceerd infarct aangedane hemisfeer<br>
+                        • Trombocyten < 40 x 10⁹/L<br>
+                        • INR > 3.0<br>
+                        • Glucose > 22 mmol/L<br>
+                        • mRS > 2 voor het infarct
                     </div>
                 </div>
 
@@ -502,37 +567,61 @@
                 
                 <h3>⏱️ Tijdlijn</h3>
                 <div class="small-text" style="margin-bottom: 20px;">
-                    <strong>0-4.5 uur:</strong> IVT overwegen<br>
-                    <strong>0-6 uur:</strong> EVT overwegen (LVO voorste circulatie)<br>
-                    <strong>6-24 uur:</strong> EVT overwegen (geselecteerde patiënten)
+                    <strong>IVT (Tenecteplase voorkeur):</strong><br>
+                    • 0-4.5 uur: zonder perfusiecriteria<br>
+                    • 4.5-12 uur: met CT perfusiecriteria<br>
+                    <br>
+                    <strong>EVT:</strong><br>
+                    • 0-6 uur: bij proximale occlusie<br>
+                    • 6-24 uur: met aanvullende criteria (CTA/CTP)
                 </div>
 
                 <h3>🔍 Diagnostiek</h3>
                 <div class="small-text" style="margin-bottom: 20px;">
-                    • CT hersenen (eerste minuut!)<br>
-                    • Labwerk: Hb, trombo's, glucose, APTT, INR, nierfunctie<br>
-                    • CTA bij NIHSS ≥ 6 of vermoeden LVO<br>
+                    • CT hersenen (direct!)<br>
+                    • CTA + CTP (= CT Stroke)<br>
+                    • Lab: Hb, trombo's, glucose, APTT, INR, nierfunctie<br>
+                    • Bij DOAC: specifieke concentraties aanvragen<br>
                     • ECG
                 </div>
 
-                <h3>💊 Medicatie</h3>
+                <h3>💊 Medicatie Acute Fase</h3>
                 <div class="small-text" style="margin-bottom: 20px;">
-                    <strong>Direct starten:</strong><br>
-                    • Acetylsalicylzuur 300 mg (tenzij IVT!)<br>
-                    • Statine (bv. atorvastatine 40 mg)<br>
+                    <strong>Direct bij opname (indien geen IVT):</strong><br>
+                    • Acetylsalicylzuur 300 mg<br>
+                    • Statine (atorvastatine 40 mg)<br>
                     <br>
-                    <strong>Niet binnen 24u na IVT:</strong><br>
+                    <strong>NIET binnen 24u na IVT:</strong><br>
                     • Anticoagulantia<br>
-                    • Trombocytenaggregatieremmers
+                    • Trombocytenaggregatieremmers<br>
+                    • NSAID<br>
+                    <br>
+                    <strong>24 uur na IVT (indien stabiel):</strong><br>
+                    • ASA 240mg eenmalig → 80mg 1dd<br>
+                    • Clopidogrel 300mg eenmalig → 75mg 1dd<br>
+                    • Dalteparine profylaxe (indien niet mobiliserend)
                 </div>
 
                 <h3>🩺 Monitoring</h3>
-                <div class="small-text">
+                <div class="small-text" style="margin-bottom: 20px;">
                     • Stroke unit opname<br>
                     • Frequente neurologische evaluatie<br>
-                    • Bloeddruk management (zie IVT)<br>
-                    • Glucose 4-11 mmol/L<br>
-                    • Temperatuur &lt; 37.5°C
+                    <br>
+                    <strong>Na IVT - eerste 24u:</strong><br>
+                    • RR elk 15 min (2u) → elk 30 min (6u) → elk uur<br>
+                    • Streef RR < 185/110 mmHg<br>
+                    • Monitor hartritme, ademhaling, saturatie<br>
+                    • Temperatuur < 37.5°C<br>
+                    • Glucose 4-11 mmol/L
+                </div>
+
+                <h3>⚠️ Bloedingscomplicatie</h3>
+                <div class="small-text">
+                    <strong>Bij verdenking ICB of grote bloeding:</strong><br>
+                    • Spoed CT<br>
+                    • Fibrinogeenconcentraat 2g IV (herhaal bij < 1.5 g/L)<br>
+                    • Tranexaminezuur 1g IV, daarna 1g over 8u<br>
+                    • Overweeg neurochirurg consult
                 </div>
 
                 <button class="action-btn gray" onclick="showStrokeSection('menu')">← Terug</button>
@@ -561,23 +650,119 @@
                 <div class="protocol-box">
                     <h3>1️⃣ Vitamine K</h3>
                     <div class="dosage">10 mg IV</div>
-                    <div class="small-text">Langzaam over 10-20 minuten</div>
-                </div>
-
-                <div class="protocol-box">
-                    <h3>2️⃣ Protaminecomplexconcentraat (PCC)</h3>
-                    <div class="dosage">Start 1000 IE IV</div>
                     <div class="small-text">
-                        In afwachting van INR/gewichtsmeting<br>
-                        Octaplex®, Cofact®, Beriplex®
+                        Met INR controle na 6 uur<br>
+                        Zonodig extra vitamine K
                     </div>
                 </div>
 
                 <div class="protocol-box">
-                    <h3>3️⃣ Controle</h3>
-                    <div class="small-text">
-                        INR na 15-30 min<br>
-                        <strong style="color: #dc2626;">INR ≥ 1.5 → Extra PCC 500-1000 IE</strong>
+                    <h3>2️⃣ Vierfactorenconcentraat (Cofact®)</h3>
+                    <div class="small-text" style="margin-bottom: 12px;">
+                        <strong>Dosering afhankelijk van INR en lichaamsgewicht:</strong>
+                    </div>
+                    
+                    <div style="overflow-x: auto; margin: 10px 0;">
+                        <table style="width: 100%; border-collapse: collapse; font-size: 13px;">
+                            <thead>
+                                <tr style="background: #f1f5f9;">
+                                    <th style="border: 1px solid #e2e8f0; padding: 8px; text-align: left;">INR →</th>
+                                    <th style="border: 1px solid #e2e8f0; padding: 8px;">7.5</th>
+                                    <th style="border: 1px solid #e2e8f0; padding: 8px;">5.9</th>
+                                    <th style="border: 1px solid #e2e8f0; padding: 8px;">4.8</th>
+                                    <th style="border: 1px solid #e2e8f0; padding: 8px;">4.2</th>
+                                    <th style="border: 1px solid #e2e8f0; padding: 8px;">3.6</th>
+                                    <th style="border: 1px solid #e2e8f0; padding: 8px;">3.3</th>
+                                    <th style="border: 1px solid #e2e8f0; padding: 8px;">3.0</th>
+                                    <th style="border: 1px solid #e2e8f0; padding: 8px;">2.8</th>
+                                    <th style="border: 1px solid #e2e8f0; padding: 8px;">1.5</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="border: 1px solid #e2e8f0; padding: 8px; font-weight: 600;">50 kg</td>
+                                    <td style="border: 1px solid #e2e8f0; padding: 8px; text-align: center;">1500</td>
+                                    <td style="border: 1px solid #e2e8f0; padding: 8px; text-align: center;">1500</td>
+                                    <td style="border: 1px solid #e2e8f0; padding: 8px; text-align: center;">1500</td>
+                                    <td style="border: 1px solid #e2e8f0; padding: 8px; text-align: center;">1250</td>
+                                    <td style="border: 1px solid #e2e8f0; padding: 8px; text-align: center;">1250</td>
+                                    <td style="border: 1px solid #e2e8f0; padding: 8px; text-align: center;">1250</td>
+                                    <td style="border: 1px solid #e2e8f0; padding: 8px; text-align: center;">1000</td>
+                                    <td style="border: 1px solid #e2e8f0; padding: 8px; text-align: center;">1000</td>
+                                    <td style="border: 1px solid #e2e8f0; padding: 8px; text-align: center;">500</td>
+                                </tr>
+                                <tr style="background: #f8fafc;">
+                                    <td style="border: 1px solid #e2e8f0; padding: 8px; font-weight: 600;">60 kg</td>
+                                    <td style="border: 1px solid #e2e8f0; padding: 8px; text-align: center;">2000</td>
+                                    <td style="border: 1px solid #e2e8f0; padding: 8px; text-align: center;">1750</td>
+                                    <td style="border: 1px solid #e2e8f0; padding: 8px; text-align: center;">1750</td>
+                                    <td style="border: 1px solid #e2e8f0; padding: 8px; text-align: center;">1500</td>
+                                    <td style="border: 1px solid #e2e8f0; padding: 8px; text-align: center;">1500</td>
+                                    <td style="border: 1px solid #e2e8f0; padding: 8px; text-align: center;">1500</td>
+                                    <td style="border: 1px solid #e2e8f0; padding: 8px; text-align: center;">1250</td>
+                                    <td style="border: 1px solid #e2e8f0; padding: 8px; text-align: center;">1250</td>
+                                    <td style="border: 1px solid #e2e8f0; padding: 8px; text-align: center;">500</td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid #e2e8f0; padding: 8px; font-weight: 600;">70 kg</td>
+                                    <td style="border: 1px solid #e2e8f0; padding: 8px; text-align: center;">2250</td>
+                                    <td style="border: 1px solid #e2e8f0; padding: 8px; text-align: center;">2000</td>
+                                    <td style="border: 1px solid #e2e8f0; padding: 8px; text-align: center;">2000</td>
+                                    <td style="border: 1px solid #e2e8f0; padding: 8px; text-align: center;">1750</td>
+                                    <td style="border: 1px solid #e2e8f0; padding: 8px; text-align: center;">1750</td>
+                                    <td style="border: 1px solid #e2e8f0; padding: 8px; text-align: center;">1750</td>
+                                    <td style="border: 1px solid #e2e8f0; padding: 8px; text-align: center;">1500</td>
+                                    <td style="border: 1px solid #e2e8f0; padding: 8px; text-align: center;">1500</td>
+                                    <td style="border: 1px solid #e2e8f0; padding: 8px; text-align: center;">500</td>
+                                </tr>
+                                <tr style="background: #f8fafc;">
+                                    <td style="border: 1px solid #e2e8f0; padding: 8px; font-weight: 600;">80 kg</td>
+                                    <td style="border: 1px solid #e2e8f0; padding: 8px; text-align: center;">2500</td>
+                                    <td style="border: 1px solid #e2e8f0; padding: 8px; text-align: center;">2500</td>
+                                    <td style="border: 1px solid #e2e8f0; padding: 8px; text-align: center;">2250</td>
+                                    <td style="border: 1px solid #e2e8f0; padding: 8px; text-align: center;">2250</td>
+                                    <td style="border: 1px solid #e2e8f0; padding: 8px; text-align: center;">2250</td>
+                                    <td style="border: 1px solid #e2e8f0; padding: 8px; text-align: center;">2000</td>
+                                    <td style="border: 1px solid #e2e8f0; padding: 8px; text-align: center;">2000</td>
+                                    <td style="border: 1px solid #e2e8f0; padding: 8px; text-align: center;">1750</td>
+                                    <td style="border: 1px solid #e2e8f0; padding: 8px; text-align: center;">500</td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid #e2e8f0; padding: 8px; font-weight: 600;">90 kg</td>
+                                    <td style="border: 1px solid #e2e8f0; padding: 8px; text-align: center;">2500</td>
+                                    <td style="border: 1px solid #e2e8f0; padding: 8px; text-align: center;">2500</td>
+                                    <td style="border: 1px solid #e2e8f0; padding: 8px; text-align: center;">2500</td>
+                                    <td style="border: 1px solid #e2e8f0; padding: 8px; text-align: center;">2250</td>
+                                    <td style="border: 1px solid #e2e8f0; padding: 8px; text-align: center;">2250</td>
+                                    <td style="border: 1px solid #e2e8f0; padding: 8px; text-align: center;">2250</td>
+                                    <td style="border: 1px solid #e2e8f0; padding: 8px; text-align: center;">2000</td>
+                                    <td style="border: 1px solid #e2e8f0; padding: 8px; text-align: center;">2000</td>
+                                    <td style="border: 1px solid #e2e8f0; padding: 8px; text-align: center;">500</td>
+                                </tr>
+                                <tr style="background: #f8fafc;">
+                                    <td style="border: 1px solid #e2e8f0; padding: 8px; font-weight: 600;">100 kg</td>
+                                    <td style="border: 1px solid #e2e8f0; padding: 8px; text-align: center;">2500</td>
+                                    <td style="border: 1px solid #e2e8f0; padding: 8px; text-align: center;">2500</td>
+                                    <td style="border: 1px solid #e2e8f0; padding: 8px; text-align: center;">2500</td>
+                                    <td style="border: 1px solid #e2e8f0; padding: 8px; text-align: center;">2500</td>
+                                    <td style="border: 1px solid #e2e8f0; padding: 8px; text-align: center;">2500</td>
+                                    <td style="border: 1px solid #e2e8f0; padding: 8px; text-align: center;">2250</td>
+                                    <td style="border: 1px solid #e2e8f0; padding: 8px; text-align: center;">2000</td>
+                                    <td style="border: 1px solid #e2e8f0; padding: 8px; text-align: center;">2000</td>
+                                    <td style="border: 1px solid #e2e8f0; padding: 8px; text-align: center;">500</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="small-text" style="margin-top: 12px;">
+                        <strong>Toediening:</strong><br>
+                        • Infusiesnelheid: 50 EH/minuut (= 2 ml/minuut)<br>
+                        • <strong>15 minuten na einde inloop:</strong> INR-controle<br>
+                        • Bij niet-bereikte INR: 500 EH extra geven<br>
+                        • Bij initiële INR < 1.5: onafhankelijk van gewicht 500 EH<br>
+                        <br>
+                        <strong>Opmerking:</strong> Dosering in EH (1 ml = 25 EH; 1e kolom = lichaamsgewicht, 1e rij = INR-waarde)
                     </div>
                 </div>
 
@@ -597,7 +782,7 @@
                 <div class="protocol-box">
                     <h3>Xa-remmers (Eliquis®/Xarelto®/Lixiana®)</h3>
                     <div style="font-size: 17px; font-weight: 600; color: #2563eb; margin-top: 10px;">
-                        Protaminecomplexconcentraat (PCC) 50 IE/kg IV
+                        Prothrombinecomplexconcentraat (PCC) 50 IE/kg IV
                     </div>
                 </div>
 
@@ -662,21 +847,34 @@
                     <h3>⏱️ 0-5 min: ACUUT</h3>
                     <div class="small-text">
                         <strong>ABC + glucose:</strong><br>
-                        • Zuurstof, IV-toegang<br>
-                        • Bloedglucose direct (behandel &lt; 3.0 mmol/L)<br>
-                        • Thiamine 100mg IV (bij malnutritie/alcoholisme)
+                        • Zuurstof: Non-rebreathing masker met 15 L O2<br>
+                        • IV-toegang<br>
+                        • Bloedglucose direct controleren<br>
+                        <br>
+                        <strong>Bij hypoglycemie (&lt; 3.0 mmol/L):</strong><br>
+                        • 100cc glucose 10% of 20cc glucose 50% + thiamine<br>
+                        <br>
+                        <strong>Bij verdenking alcoholisme/ondervoeding:</strong><br>
+                        • Thiamine 250 mg i.v./i.m.<br>
+                        <br>
+                        <strong>Bij instabiliteit luchtweg/hemodynamiek:</strong><br>
+                        • <strong>Consulteer SEH-arts en/of intensivist</strong>
                     </div>
                 </div>
 
                 <div class="info-box purple">
-                    <h3>💉 5-20 min: FASE 1</h3>
+                    <h3>💉 0-10 min: FASE 1</h3>
                     <div style="font-size: 16px; font-weight: 600; color: #7c3aed; margin-bottom: 10px;">
                         Benzodiazepines
                     </div>
                     <div class="small-text">
-                        <strong>1e keus - Lorazepam:</strong><br>
-                        • 0.1 mg/kg IV (max 4 mg)<br>
-                        • Herhaal na 5-10 min indien aanval persisteert<br>
+                        <strong>1e keus - Midazolam:</strong><br>
+                        • 5 mg IV<br>
+                        • Herhaal 5 mg na 5 min indien aanval persisteert<br>
+                        <br>
+                        <strong>Alternatief - Lorazepam:</strong><br>
+                        • 4 mg IV<br>
+                        • Herhaal 4 mg na 5 min indien aanval persisteert<br>
                         <br>
                         <strong>Alternatief - Diazepam:</strong><br>
                         • 10 mg IV (5 mg/min)<br>
@@ -688,9 +886,9 @@
                 </div>
 
                 <div class="protocol-box red-border">
-                    <h3>💉 20-40 min: FASE 2</h3>
+                    <h3>💉 Vanaf 10 min: FASE 2</h3>
                     <div style="font-size: 14px; color: #dc2626; font-weight: 600; margin-bottom: 10px;">
-                        ⚠️ Aanval persisteert → Kies 1 van onderstaande:
+                        ⚠️ Aanval persisteert → I.v. opladen met anti-epilepticum (kies 1 van onderstaande):
                     </div>
                     <div class="small-text">
                         <strong>Levetiracetam (1e keus):</strong><br>
@@ -702,25 +900,22 @@
                         <br>
                         <strong>Fenytoïne:</strong><br>
                         • 20 mg/kg IV (max 50 mg/min)<br>
-                        • ECG-monitoring! CI: ritmestoornissen<br>
-                        <br>
-                        <strong>Fosfenytoïne:</strong><br>
-                        • 20 mg PE/kg IV (max 150 mg PE/min)<br>
-                        • Veiliger dan fenytoïne
+                        • ECG-monitoring! CI: ritmestoornissen
                     </div>
                 </div>
 
                 <div class="info-box red">
-                    <h3>🚨 40-60 min: FASE 3 - RSE</h3>
+                    <h3>🚨 Na 15-30 min: FASE 3 - RSE</h3>
                     <div style="font-size: 14px; font-weight: 600; color: #dc2626; margin-bottom: 10px;">
-                        Refractaire Status Epilepticus → ICU + anesthesie
+                        Refractaire Status Epilepticus → ICU + anesthesie<br>
+                        <span style="font-weight: 400; font-size: 13px;">(indien aanval persisteert ondanks fase 1 + 2)</span>
                     </div>
                     <div class="small-text">
                         <strong>Midazolam (1e keus):</strong><br>
-                        • 0.2 mg/kg bolus, dan 0.1-0.4 mg/kg/u<br>
+                        • 0.2 mg/kg bolus, dan 0.05-1.0 mg/kg/u<br>
                         <br>
                         <strong>Propofol:</strong><br>
-                        • 1-2 mg/kg bolus, dan 2-10 mg/kg/u<br>
+                        • 2-3 mg/kg bolus, dan 2-5 mg/kg/u<br>
                         <br>
                         <strong>Thiopental:</strong><br>
                         • 3-5 mg/kg bolus, dan 3-7 mg/kg/u<br>
@@ -758,7 +953,7 @@
         <div class="footer">
             <p><strong>Gebaseerd op NVN/ESO/AES richtlijnen</strong></p>
             <p>Raadpleeg altijd het lokale ziekenhuis protocol</p>
-            <p style="margin-top: 8px; color: #94a3b8;">© 2025 Spoedneurologie.nl</p>
+            <p style="margin-top: 8px; color: #94a3b8;">© 2025 Spoedneurologie.nl • Versie 2.3</p>
         </div>
     </div>
 
